@@ -3,8 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+<header>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MoviesApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">All Movies</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Genres
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Comedy</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Adventure</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+</header>
+<main>
+    <div class="container">
+        <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img class="img-fluid rounded shadow" src="https://image.tmdb.org/t/p/w300/bSqpOGzaKBdGkBLmcm1JJIVryYy.jpg">
+        </button>-->
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Movie Title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body row">
+                        <div class="col-6">
+                            <img class="img-fluid rounded shadow"
+                                 src="https://image.tmdb.org/t/p/w300/bSqpOGzaKBdGkBLmcm1JJIVryYy.jpg">
+                        </div>
+                        <div class="col-6">
+                            <a href="www.youtube.com">Play Trailer</a>
+                            <p class="mt-2"><span class="fw-bold">Release Date: </span> 2022-07-27</p>
+                            <p>After escaping from an Estonian psychiatric facility, Leena Klammer travels to America by
+                                impersonating Esther, the missing daughter of a wealthy family. But when her mask starts
+                                to slip, she is put against a mother who will protect her family from the murderous
+                                “child” at any cost.</p>
+                            <p>Rating: 6.9/10</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row my-1">
+            <div class="col-11  my-1 custom-col"></div>
+            <div class="col-1 my-1 custom-col"></div>
+            <div class="col-1 my-1 custom-col"></div>
+            <div class="col-8 my-1 custom-col"></div>
+            <div class="col-6 my-1 custom-col"></div>
+        </div>
+        <h1>Noul rand</h1>
+        <div class="row my-1">
+            <div class="col-6 col-md-3   my-1 custom-col"></div>
+            <div class=" col-5 col-md-3  my-1 custom-col"></div>
+            <div class="col-md-3  my-1 custom-col"></div>
+            <div class="col-md-3 col-7  my-1 custom-col"></div>
+        </div>-->
+        <div class="row justify-content-between my-2" id="movies-div">
+            <div class="col-md-4 col-sm-6 col-lg-3 my-2">
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img class="img-fluid rounded shadow"
+                         src="https://image.tmdb.org/t/p/w300/bSqpOGzaKBdGkBLmcm1JJIVryYy.jpg">
+                </button>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-3 my-2">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img class="img-fluid rounded shadow"
+                         src="https://image.tmdb.org/t/p/w300/bSqpOGzaKBdGkBLmcm1JJIVryYy.jpg">
+                </button>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-3 my-2">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img class="img-fluid rounded shadow"
+                         src="https://image.tmdb.org/t/p/w300/bSqpOGzaKBdGkBLmcm1JJIVryYy.jpg">
+                </button>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-3 my-2">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img class="img-fluid rounded shadow"
+                         src="https://image.tmdb.org/t/p/w300/bSqpOGzaKBdGkBLmcm1JJIVryYy.jpg">
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-dark text-light text-center p-1">
+    <h3>Made by Tz</h3>
+</footer>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
 </body>
 </html>
